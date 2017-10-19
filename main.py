@@ -71,6 +71,7 @@ def train(rank, size):
     agent = Agent()
     optimizer = Adam(agent.parameters(), lr=0.001)
     rewards = []
+    env = gym.make('CartPole-v0')
 
     for episode in np.arange(100):
         state = env.reset()
