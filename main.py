@@ -68,6 +68,7 @@ def average_rewards(reward):
 
 
 def train(rank, size):
+    torch.manual_seed(1234)
     agent = Agent()
     optimizer = Adam(agent.parameters(), lr=0.001)
     rewards = []
@@ -99,7 +100,7 @@ def train(rank, size):
         np.savetxt('rewards.csv', rewards, delimiter=',')
 
 
-def init_processes(rank, size, fn, backend='tcp'):
+def init_processes(rank, size, fn, backend='mpi'):
     """ Initialize the distributed environment. """
     os.environ['MASTER_ADDR'] = '127.0.0.1'
     os.environ['MASTER_PORT'] = '29500'
