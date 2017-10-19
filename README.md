@@ -1,6 +1,6 @@
 # A2C-TCP
 
-Advance Actor Critic in Pytorch with TCP
+Simple Advantage Actor Critic in Pytorch with TCP and torch.distributed.
 
 # Results
 
